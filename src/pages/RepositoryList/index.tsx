@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
-import { RepositoryItem } from '../../components/RepositoryItem';
+import { Data, RepositoryItem } from '../../components/RepositoryItem';
 import styles from './styles.module.scss';
 
 //https://api.github.com/users/emffor/repos
 
+interface Repository extends Data {
+  id: string;
+}
 export function RepositoryList(){
   //const [] = useState([]); //sempre começar com aquilo que vai armazenar.
-  const [ repositories, setRepositories ] = useState([]);
+  const [ repositories, setRepositories ] = useState<Repository[]>([]);
 
   /* 
     2 PARÂMETROS: 
@@ -23,7 +26,6 @@ export function RepositoryList(){
 
   console.log(repositories);
   
-  
   return (
     <section className={styles.container}>
         <h1>Lista de Repositórios</h1>
@@ -32,8 +34,8 @@ export function RepositoryList(){
             repositories.map((repository) => {
               return <RepositoryItem 
                 key={repository.id}
-                data={repository}
-              />
+                data={repository}     
+              />       
             })}
         </ul>
     </section>
