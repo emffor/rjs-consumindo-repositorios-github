@@ -24,11 +24,12 @@ export function RepositoryList(){
   useEffect(() => {
     fetch('https://api.github.com/users/emffor/repos')
     .then(response => response.json())
-    .then(data => console.log(data));
-       
-  }, [repositories]);
+    .then(data => console.log(data));      
+  }, []);
 
-
+  console.log(repositories);
+  
+  
   return (
     <section className={styles.container}>
         <h1>Lista de Repositórios</h1>
