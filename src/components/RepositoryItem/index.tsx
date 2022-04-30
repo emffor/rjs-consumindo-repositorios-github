@@ -1,16 +1,12 @@
 import styles from './styles.module.scss';
-
 interface Data {
   name: string;
   description: string;
   link: string;
 }
-
 interface Props {
   data: Data;
 }
-
-
 
 export function RepositoryItem({ data } : Props){
   return (
