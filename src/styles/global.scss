@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #FFFFFF;
+    --background: #1a1c1d;
+    --text-100: #98a3aa;
+
+    --green-500: #00c925;
+    --fire-500: #e85f5c;
+    --yellow-500: #faa916;
+    --gray-800: #2b2e2f;
+}
+
+@media (min-width: 1080px) {
+    html {
+        font-size: 93.75%;
+    }
+}
+
+@media (min-width: 720px) {
+    html {
+        font-size: 87.5%;
+    }
+}
+
+body {
+    background: var(--background);
+    color: var(--white);
+}
+
+body, input, textarea, select, button {
+    font: 400 1rem "Poppins", sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit; //vai ficar com a cor do elemento pai
+    text-decoration: none;
+}
+

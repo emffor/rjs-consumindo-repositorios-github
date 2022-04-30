@@ -1,0 +1,23 @@
+.container {
+    margin: 5rem 5rem;
+
+    strong {
+        display: flex;
+        font-size: 1.8rem;
+        color: var(--green-500);
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        display: flex;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    a {
+        border-bottom: 2px solid var(--yellow-500);
+        font-size: 1.2rem;
+        color: var(--yellow-500);
+    }
+
+}
