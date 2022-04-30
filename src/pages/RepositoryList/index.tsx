@@ -4,12 +4,6 @@ import styles from './styles.module.scss';
 
 //https://api.github.com/users/emffor/repos
 
-const repository = {
-    name: 'nome do repositório',
-    description: 'Descrição do repositório',
-    link: 'https://github.com/emffor',
-}
-
 export function RepositoryList(){
   //const [] = useState([]); //sempre começar com aquilo que vai armazenar.
   const [ repositories, setRepositories ] = useState([]);
@@ -24,7 +18,7 @@ export function RepositoryList(){
   useEffect(() => {
     fetch('https://api.github.com/users/emffor/repos')
     .then(response => response.json())
-    .then(data => console.log(data));      
+    .then(data => setRepositories(data));      
   }, []);
 
   console.log(repositories);
@@ -33,12 +27,14 @@ export function RepositoryList(){
   return (
     <section className={styles.container}>
         <h1>Lista de Repositórios</h1>
-
-        <ul className={styles.list}>
-            <RepositoryItem data={repository}/>
-            <RepositoryItem data={repository}/>
-            <RepositoryItem data={repository}/>
-            <RepositoryItem data={repository}/>            
+        <ul>
+          {
+            repositories.map((repository) => {
+              return <RepositoryItem 
+                key={repository.id}
+                data={repository}
+              />
+            })}
         </ul>
     </section>
   );
